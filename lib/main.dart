@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:socket_io_client/socket_io_client.dart' as IO;
+import 'package:socket_io_demo/router.dart';
 
 void main() {
   runApp(const MyApp());
@@ -10,15 +11,13 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    const title = 'Flutter x Socket.io Demo';
-
-    return MaterialApp(
-      title: title,
+    return MaterialApp.router(
+      title: 'Flutter x Socket.io Demo',
       theme: ThemeData(
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
         useMaterial3: true,
       ),
-      home: const MyHomePage(title: title),
+      routerConfig: router,
     );
   }
 }
@@ -47,6 +46,8 @@ class _MyHomePageState extends State<MyHomePage> {
 
     _socket.onConnect((_) => print('connect'));
     _socket.onDisconnect((_) => print('disconnect'));
+    // TODO: メッセージのやり取り
+    // TODO: user idはString.fromEnviromentで取得する（flutter run時にU--dart-define=SER_ID=〇〇をセットする）
     _socket.connect();
   }
 
