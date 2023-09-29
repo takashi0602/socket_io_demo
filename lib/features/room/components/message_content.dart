@@ -20,7 +20,6 @@ class _MessageContentState extends ConsumerState<MessageContent> {
   @override
   void initState() {
     super.initState();
-    debugPrint('ほげほげ: ${widget.roomId}');
 
     _socket = IO.io(
       "http://localhost:3000",
