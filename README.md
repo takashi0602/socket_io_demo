@@ -1,16 +1,16 @@
 # socket_io_demo
 
-A new Flutter project.
+FlutterとSocket.IOを使用したリアルタイム通信のデモアプリ
 
-## Getting Started
+## セットアップ
 
-This project is a starting point for a Flutter application.
+```bash
+$ git clone https://github.com/takashi0602/socket_io_demo.git
 
-A few resources to get you started if this is your first Flutter project:
+$ cd socket_io_demo
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+$ fvm flutter pub get
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+// このデモアプリではユーザー認証などはないため、起動時にユーザーIDをセットする
+$ fvm flutter run --dart-define=USER_ID=1
+```
