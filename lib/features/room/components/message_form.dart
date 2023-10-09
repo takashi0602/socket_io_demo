@@ -93,7 +93,7 @@ class _MessageFormState extends State<MessageForm> {
           const SizedBox(width: 8),
           IconButton(
             iconSize: 32,
-            onPressed: _sendMessage,
+            onPressed: canSend ? _sendMessage : null,
             icon: Icon(
               Icons.send,
               color: canSend ? Colors.blue : Colors.grey,
